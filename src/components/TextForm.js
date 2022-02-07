@@ -34,10 +34,9 @@ export default function TextForm(props) {
 
     const capitalFirstLetter = ()=>{
         let words = text.split(" ")
-       let uppercaseword = ' '
+        let uppercaseword =' '
         words.forEach(element => {
-           uppercaseword += element.charAt(0).toUpperCase() + element.slice(1) + " "
-        });
+           uppercaseword += element.charAt(0).toUpperCase() + element.slice(1)+" "});
         setText(uppercaseword)
         props.showAlert("Capitalization Done", "success")
     }
@@ -55,16 +54,16 @@ export default function TextForm(props) {
         <div className="mb-3">
         <textarea className="form-control" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'?'black':'white',  color: props.mode==='dark'?'white':'black'}}  id="myBox" rows="8"></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to UpperCase</button>
-        <button className="btn btn-info mx-2" onClick={handleLoClick}>Convert to LowerCase</button>
-        <button className="btn btn-primary mx-2" onClick={capitalFirstLetter}>Capitalize</button>
-        <button className="btn btn-success mx-2" onClick={handleReverseClick}>Reverse Text</button>
-        <button className="btn btn-danger mx-2" onClick={handleClearClick}>Clear All</button>
+        <button disabled = {text.length===0} className ="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert to UpperCase</button>
+        <button disabled = {text.length===0} className ="btn btn-info mx-2 my-2" onClick={handleLoClick}>Convert to LowerCase</button>
+        <button disabled = {text.length===0} className ="btn btn-primary mx-2 my-2" onClick={capitalFirstLetter}>Capitalize</button>
+        <button disabled = {text.length===0} className ="btn btn-success mx-2 my-2" onClick={handleReverseClick}>Reverse Text</button>
+        <button disabled = {text.length===0} className ="btn btn-danger mx-2 my-2" onClick={handleClearClick}>Clear All</button>
       </div>
       <div className="container my-3" style={{color: props.mode==='dark'?'white':'black'}}>
           <h2>Your Text Summary</h2>
-          <p>Words : {text.split(" ").length -1 } || Characters : {text.length} </p>
-          <p>It will take {0.008*text.split(" ").length} minutes to read.</p>
+          <p>Words : {text.split(" ").filter((element)=>{return element.length!==0}).length } || Characters : {text.length} </p>
+          <p>It will take {0.008*text.split(" ").filter((element)=>{return element.length!==0}).length} minutes to read.</p>
           <h2>Preview</h2>
           <p>{text.length>0?text:"Type something in above text-box to preview here.."}</p>
     </div>
