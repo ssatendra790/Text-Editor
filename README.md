@@ -1,3 +1,7 @@
+# Text-Editor
+This is a single page website where a user can modify his/her text or paragraphs.
+# Tech used
+This project was built using React and JavaScript, focusing on creating an intuitive user interface with a modern design. It was built with responsiveness in mind, allowing the application to be easily accessed on various devices and platforms. The React components were well organized, making it easy to debug and modify the application. Furthermore, the JavaScript code was written in an efficient and concise manner, to ensure the application ran smoothly. The project was a success, as it provided an enjoyable user experience and a dynamic interface.
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
